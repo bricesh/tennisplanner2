@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Training Registration</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Training Registration</h1>
+    
+    <!-- Auth Container - Login/Signup Forms -->
+    <div id="auth-container">
+      <div class="tabs">
+        <button class="tab-btn active" data-target="login-form">Login</button>
+        <button class="tab-btn" data-target="signup-form">Sign Up</button>
+      </div>
+
+      <div id="login-form" class="auth-form active">
+        <h2>Login</h2>
+        <div class="form-group">
+          <label for="login-email">Email</label>
+          <input type="email" id="login-email" required>
+        </div>
+        <div class="form-group">
+          <label for="login-password">Password</label>
+          <input type="password" id="login-password" required>
+        </div>
+        <button id="login-btn" class="btn primary-btn">Login</button>
+        <p id="login-error" class="error-message"></p>
+      </div>
+
+      <div id="signup-form" class="auth-form">
+        <h2>Sign Up</h2>
+        <div class="form-group">
+          <label for="signup-email">Email</label>
+          <input type="email" id="signup-email" required>
+        </div>
+        <div class="form-group">
+          <label for="signup-password">Password</label>
+          <input type="password" id="signup-password" required>
+        </div>
+        <div class="form-group">
+          <label for="signup-username">Username</label>
+          <input type="text" id="signup-username" required>
+        </div>
+        <button id="signup-btn" class="btn primary-btn">Create Account</button>
+        <p id="signup-error" class="error-message"></p>
+      </div>
+    </div>
+
+    <!-- Main App Container (hidden until login) -->
+    <div id="app-container" class="hidden">
+      <div id="welcome-banner">
+        <h2 id="welcome-message"></h2>
+        <p id="session-info"></p>
+      </div>
+      
+      
+      <div id="slots-container">
+        <!-- Slot buttons will be added dynamically -->
+      </div>
+      
+      <div id="players-container">
+        <!-- Lists of registered players will be added dynamically -->
+      </div>
+      
+      <button id="unregister-btn" class="btn danger-btn">Unregister</button>
+      
+      <div class="actions">
+        <button id="logout-btn" class="btn secondary-btn">Logout</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
